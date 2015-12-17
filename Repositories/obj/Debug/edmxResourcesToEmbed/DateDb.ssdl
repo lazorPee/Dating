@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DateDb.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DateDbStoreContainer">
+    <EntitySet Name="UserSet" EntityType="DateDb.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EntrySet" EntityType="DateDb.Store.EntrySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserUser" EntityType="DateDb.Store.UserUser" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserEntry" Association="DateDb.Store.UserEntry">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Entry" EntitySet="EntrySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUser_User" Association="DateDb.Store.FK_UserUser_User">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="UserUser" EntitySet="UserUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUser_User1" Association="DateDb.Store.FK_UserUser_User1">
+      <End Role="User1" EntitySet="UserSet" />
+      <End Role="UserUser" EntitySet="UserUser" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="About" Type="nvarchar" Nullable="false" MaxLength="350" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EntrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserUser">
+    <Key>
+      <PropertyRef Name="User1_Id" />
+      <PropertyRef Name="User2_Id" />
+    </Key>
+    <Property Name="User1_Id" Type="int" Nullable="false" />
+    <Property Name="User2_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserEntry">
+    <End Role="User" Type="DateDb.Store.UserSet" Multiplicity="1" />
+    <End Role="Entry" Type="DateDb.Store.EntrySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Entry">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUser_User">
+    <End Role="User" Type="DateDb.Store.UserSet" Multiplicity="1" />
+    <End Role="UserUser" Type="DateDb.Store.UserUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserUser">
+        <PropertyRef Name="User1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUser_User1">
+    <End Role="UserUser" Type="DateDb.Store.UserUser" Multiplicity="*" />
+    <End Role="User1" Type="DateDb.Store.UserSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserUser">
+        <PropertyRef Name="User2_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
