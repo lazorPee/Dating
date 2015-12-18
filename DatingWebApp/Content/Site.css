@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+img {
+    width: 150px;
+    height: 150px; 
+
+}
+
+#bild2 {
+    margin-left: 600px;
+}
