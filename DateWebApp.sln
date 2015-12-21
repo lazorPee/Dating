@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateWebApp", "DateWebApp\DateWebApp.csproj", "{71B410FB-5955-4385-A08C-426B5593AE0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{90F90499-65F4-4EAE-B579-731423F55731}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71B410FB-5955-4385-A08C-426B5593AE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B410FB-5955-4385-A08C-426B5593AE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B410FB-5955-4385-A08C-426B5593AE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B410FB-5955-4385-A08C-426B5593AE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F90499-65F4-4EAE-B579-731423F55731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F90499-65F4-4EAE-B579-731423F55731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F90499-65F4-4EAE-B579-731423F55731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F90499-65F4-4EAE-B579-731423F55731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
