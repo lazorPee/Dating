@@ -1,4 +1,9 @@
-﻿body {
+﻿
+#regForm {
+    float: left;
+    padding-right: 300px;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
