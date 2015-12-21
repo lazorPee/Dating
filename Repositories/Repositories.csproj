@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4A18058A-E28A-458A-94F4-DD48A8736A9D}</ProjectGuid>
+    <ProjectGuid>{90F90499-65F4-4EAE-B579-731423F55731}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Repositories</RootNamespace>
@@ -52,53 +52,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DateDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DateDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DateDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DateDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DateDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DateDb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Entry.cs">
-      <DependentUpon>DateDb.tt</DependentUpon>
+      <DependentUpon>ReposDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReposDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReposDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReposDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReposDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReposDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReposDb.edmx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>DateDb.tt</DependentUpon>
+      <DependentUpon>ReposDb.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="DateDb.edmx">
+    <EntityDeploy Include="ReposDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DateDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReposDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="DateDb.edmx.diagram">
-      <DependentUpon>DateDb.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="ReposDb.edmx.diagram">
+      <DependentUpon>ReposDb.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DateDb.Context.tt">
+    <Content Include="ReposDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateDb.Context.cs</LastGenOutput>
-      <DependentUpon>DateDb.edmx</DependentUpon>
+      <DependentUpon>ReposDb.edmx</DependentUpon>
+      <LastGenOutput>ReposDb.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DateDb.edmx.sql" />
-    <Content Include="DateDb.tt">
+    <Content Include="ReposDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateDb.cs</LastGenOutput>
-      <DependentUpon>DateDb.edmx</DependentUpon>
+      <DependentUpon>ReposDb.edmx</DependentUpon>
+      <LastGenOutput>ReposDb.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
